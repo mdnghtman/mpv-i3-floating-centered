@@ -6,5 +6,5 @@ To achieve this it will:
 
 * Get the window id of the mpv process.
 * Check if it's in floating mode
-* Tell i3-msg to center the window by its windowid.
+* Tell i3-msg to center the window by its window id.
 
