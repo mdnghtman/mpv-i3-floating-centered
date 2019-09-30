@@ -9,4 +9,4 @@ function on_next_center()
     os.execute("i3-msg -q '[id=" .. mpv_windowid  .. "]' move position center")
   end
 end
-mp.register_event("file-loaded", on_next_center)
+mp.register_event("playback-restart", on_next_center)
