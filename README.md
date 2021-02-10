@@ -8,3 +8,7 @@ To achieve this it will:
 * Check if it's in floating mode
 * Tell i3-msg to center the window by its window id.
 
+Dependencies:
+* xdotool
+* xorg-xprop
+
