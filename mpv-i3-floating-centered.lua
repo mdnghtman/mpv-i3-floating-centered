@@ -3,14 +3,14 @@ local utils = require 'mp.utils'
 local pid = utils.getpid()
 
 function center_floating_mpv()
-   mpv_windowid = io.popen("xdotool search --pid " .. pid):read()
+   mpv_window_id = io.popen("xdotool search --pid " .. pid):read()
 
    -- mpv can have a slight delay in launching a window, or be called without one at all
-   if mpv_windowid == nil then return end
+   if mpv_window_id == nil then return end
 
-   floating = io.popen("xprop -id " .. mpv_windowid):read()
+   floating = io.popen("xprop -id " .. mpv_window_id):read()
    if string.match(floating, "FLOATING") then
-         os.execute("i3-msg -q '[id=" .. mpv_windowid  .. "]' move position center")
+      os.execute("i3-msg -q '[id=" .. mpv_window_id  .. "]' move position center")
    end
 end
 
