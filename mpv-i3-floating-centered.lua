@@ -3,7 +3,7 @@ local utils = require 'mp.utils'
 local pid = utils.getpid()
 
 function on_next_center()
-   mpv_windowid = io.popen("xdotool search --pid " .. pid):read("*all*")
+   mpv_windowid = io.popen("xdotool search --pid " .. pid):read()
    if mpv_windowid ~= ""  then
       floating = io.popen("xprop -id " .. mpv_windowid):read()
       if string.match(floating, "FLOATING") then
