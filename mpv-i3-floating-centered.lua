@@ -15,4 +15,5 @@ local function center_floating_mpv()
 end
 
 mp.register_event("playback-restart", center_floating_mpv)
+-- mpv should still be centered when fullscreen is toggled
 mp.observe_property("fullscreen", "bool", center_floating_mpv)
