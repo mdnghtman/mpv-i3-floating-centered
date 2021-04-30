@@ -1,5 +1,3 @@
-require 'os'
-require 'io'
 utils = require("mp.utils")
 
 function on_next_center()
