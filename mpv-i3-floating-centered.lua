@@ -1,4 +1,4 @@
-utils = require("mp.utils")
+local utils = require 'mp.utils'
 
 function on_next_center()
   pid = utils.getpid()
