@@ -2,7 +2,7 @@ local utils = require 'mp.utils'
 
 local pid = utils.getpid()
 
-function center_floating_mpv()
+local function center_floating_mpv()
    mpv_window_id = io.popen("xdotool search --pid " .. pid):read()
 
    -- mpv can have a slight delay in launching a window, or be called without one at all
