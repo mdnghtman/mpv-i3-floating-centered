@@ -8,7 +8,7 @@ function center_floating_mpv()
    -- mpv can have a slight delay in launching a window, or be called without one at all
    if mpv_window_id == nil then return end
 
-   floating = io.popen("xprop -id " .. mpv_window_id):read()
+   floating = io.popen("xprop -id " .. mpv_window_id):read("*a")
    if string.match(floating, "FLOATING") then
       os.execute("i3-msg -q '[id=" .. mpv_window_id  .. "]' move position center")
    end
