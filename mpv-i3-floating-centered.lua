@@ -2,7 +2,7 @@ local utils = require 'mp.utils'
 
 local pid = utils.getpid()
 
-function on_next_center()
+function center_floating_mpv()
    mpv_windowid = io.popen("xdotool search --pid " .. pid):read()
    if mpv_windowid ~= ""  then
       floating = io.popen("xprop -id " .. mpv_windowid):read()
@@ -12,5 +12,5 @@ function on_next_center()
    end
 end
 
-mp.register_event("playback-restart", on_next_center)
-mp.observe_property("fullscreen", "bool", on_next_center)
+mp.register_event("playback-restart", center_floating_mpv)
+mp.observe_property("fullscreen", "bool", center_floating_mpv)
